@@ -1,0 +1,19 @@
+function modernTimesOfHashTag(input) {
+    let text = input.split(` `);
+    text.forEach(element => {
+        if (element.startsWith("#") && element.length !== 1) {
+            element = element.substr(1);
+            let len = element.length;
+            let count = 0
+            for (let chr of element) {
+                let letter = chr.charCodeAt();
+                if (letter >= 65 && letter <= 90 || letter >= 90 && letter <= 122) {
+                    count++;
+                }
+            }
+            if(len === count){
+                console.log(element);
+            }
+        }
+    })
+}
